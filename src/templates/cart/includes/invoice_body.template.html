@@ -238,7 +238,7 @@
 							<li class="list-group-item border-0">[@order_type_title@] Total <span class="float-right">[%format type:'currency'%][@grand_total@][%/format%]</span></li>
 						[%if [@credit_apply@] > '0' AND [@^order_type@] ne 'quote'%]
 							<li class="list-group-item border-top-0">Amount Paid <span class="float-right text-danger">-[%format type:'currency'%][@amount_paid@][%/format%]</span></li>
-							<li id="balance" style="display:none;" class="list-group-item border-bottom-0">Balance Due <span class="float-right">[%format type:'currency'%][@owed_total@][%/format%]</span></li>
+							<li id="balance"  class="list-group-item border-bottom-0">Balance Due <span class="float-right">[%format type:'currency'%][@owed_total@][%/format%]</span></li>
 						[%/if%]
 					</ul>
 				</div>
