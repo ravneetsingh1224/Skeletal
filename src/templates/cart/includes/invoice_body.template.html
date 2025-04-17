@@ -236,9 +236,9 @@
 							<li class="list-group-item border-0">[%if [@config:PRIMARY_TAX_LABEL@]%][@config:PRIMARY_TAX_LABEL@] [%else%]GST [%/if%][%data id:'tax_inc' if:'eq' value:'y' %] inc.[%/data%]<span class="float-right">[%format type:'currency'%][@tax_total@][%/format%]</span></li>
 						[%/if%]
 							<li class="list-group-item border-0">[@order_type_title@] Total <span class="float-right">[%format type:'currency'%][@grand_total@][%/format%]</span></li>
-						[%if [@credit_apply@] > '0' AND [@^order_type@] ne 'quote'%]
+						[%if [@credit_apply@] > '0' AND [@owed_total@] > 0 AND [@^order_type@] ne 'quote'%]
 							<li class="list-group-item border-top-0">Amount Paid <span class="float-right text-danger">-[%format type:'currency'%][@amount_paid@][%/format%]</span></li>
-							<li id="balance"  class="list-group-item border-bottom-0">Balance Due <span class="float-right">[%format type:'currency'%][@owed_total@][%/format%]</span></li>
+							<li id="balance" class="list-group-item border-bottom-0">Balance Due <span class="float-right">[%format type:'currency'%][@owed_total@][%/format%]</span></li>
 						[%/if%]
 					</ul>
 				</div>
